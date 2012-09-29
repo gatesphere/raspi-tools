@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#
+# clear_swap
+# 
+# This script clears swap
+#
+# 20120928 PeckJ
+#
+
+## app logic
+if [[ $EUID -ne 0 ]]; then
+  echo "This script must be run as root." 2>&1
+  exit 1
+fi
+
+swapoff -a && swapon -a

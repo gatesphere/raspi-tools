@@ -1,0 +1,14 @@
+#!/bin/bash
+
+case $1 in
+  config)
+    cat <<'EOM'
+graph_title Temperature
+graph_vlabel Temperature
+temp.label temp
+EOM
+    exit 0;;
+esac
+
+echo -n "temp.value "
+cat /sys/class/thermal/thermal_zone0/temp

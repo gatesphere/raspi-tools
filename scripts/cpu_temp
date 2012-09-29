@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#
+# cpu_temp
+# 
+# This script simply dumps out the current cpu temperature to stdout 
+#
+# 20120928 PeckJ
+#
+
+## app logic
+cat /sys/class/thermal/thermal_zone0/temp
+
+exit 0
