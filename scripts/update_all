@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#
+# update_all
+#
+# This script will update all packages and the firmware.
+#
+# PeckJ 20121130
+#
+
+## variables
+aptget=/usr/bin/apt-get
+rpiupdate=/usr/bin/rpi-update
+
+## logic
+echo "#### APT-GET UPDATE ####"
+$aptget update
+echo
+echo "#### APT-GET UPGRADE ####"
+$aptget upgrade -y
+echo
+echo "#### RPI-UPDATE ####"
+$rpiupdate
+
+
